@@ -2,5 +2,15 @@
   "name": "test-local-lambda",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@types/aws-lambda": "^8.10.145",
+    "aws-lambda": "^1.0.7",
+    "typescript": "^5.5.4"
+  },
+  "scripts": {
+    "build": "npx tsc",
+    "docker:run": "yarn run build && docker build -t test-lambda:1 . && docker run --name aws-lambda -p 9000:8080 test-lambda:1",
+    "docker:rerun": "docker rm aws-lambda && yarn run docker:run"
+  }
 }
