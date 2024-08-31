@@ -12,4 +12,3 @@ curl -XPOST "http://localhost:9000/2015-03-31/functions/function/invocations" -d
   "width": 7
 }'
 ```
-# test-lambda-local
